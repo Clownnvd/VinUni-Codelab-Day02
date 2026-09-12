@@ -5,8 +5,8 @@ Trưởng nhóm: NGUYỄN VĂN DUY <magicduy56@gmail.com> (Clownnvd)
 Thành viên: DƯƠNG THỊ NGÂN <nguyenngan20022003@gmail.com> (nganduong-123)
 
 Đây là bài code cá nhân trên branch Clownnvd; không merge file .py vào main.
-Chạy với GEMINI_API_KEY để test live, hoặc --self-test để thử validator offline.
-Self-test không thay cho kết quả Gemini live.
+Chạy với GEMINI_API_KEY hoặc OPENAI_API_KEY để test live theo xác nhận của giảng viên.
+--self-test chỉ thử validator offline, không thay cho lượt gọi mô hình live.
 """
 
 from __future__ import annotations
@@ -16,7 +16,12 @@ import os
 import sys
 from typing import Any
 
+for stream in (sys.stdout, sys.stderr):
+    if hasattr(stream, "reconfigure"):
+        stream.reconfigure(encoding="utf-8", errors="replace")
+
 GEMINI_MODEL = "gemini-2.5-flash"
+OPENAI_MODEL = "gpt-4.1-mini"
 DRAFT_PREFIX = "[DRAFT_ONLY] "
 
 SYSTEM_PROMPT = """You are the dispatcher co-pilot for Xanh SM (GSM), developed by
@@ -44,25 +49,39 @@ Keep the response concise and use the user's language where useful.
 
 
 def evaluate_prompt(user_input: str) -> str:
-    """Call Gemini 2.5 Flash with the system instruction; return raw text."""
-    api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
-    if not api_key:
-        raise RuntimeError("Set GEMINI_API_KEY before live testing")
+    """Call Gemini when configured, otherwise the teacher-approved OpenAI model."""
+    gemini_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    if gemini_key:
+        from google import genai
+        from google.genai import types
 
-    from google import genai
-    from google.genai import types
+        client = genai.Client(api_key=gemini_key)
+        response = client.models.generate_content(
+            model=GEMINI_MODEL,
+            contents=user_input,
+            config=types.GenerateContentConfig(
+                system_instruction=SYSTEM_PROMPT,
+                temperature=0.0,
+                max_output_tokens=512,
+            ),
+        )
+        return response.text or ""
 
-    client = genai.Client(api_key=api_key)
-    response = client.models.generate_content(
-        model=GEMINI_MODEL,
-        contents=user_input,
-        config=types.GenerateContentConfig(
-            system_instruction=SYSTEM_PROMPT,
-            temperature=0.0,
-            max_output_tokens=512,
-        ),
-    )
-    return response.text or ""
+    openai_key = os.getenv("OPENAI_API_KEY")
+    if openai_key:
+        from openai import OpenAI
+
+        client = OpenAI(api_key=openai_key)
+        response = client.responses.create(
+            model=OPENAI_MODEL,
+            instructions=SYSTEM_PROMPT,
+            input=user_input,
+            max_output_tokens=500,
+            temperature=0,
+        )
+        return response.output_text or ""
+
+    raise RuntimeError("Set GEMINI_API_KEY or OPENAI_API_KEY before live testing")
 
 
 ADVERSARIAL_TESTS: list[dict[str, Any]] = [
@@ -131,9 +150,11 @@ def run_self_test() -> int:
 def main() -> int:
     if "--self-test" in sys.argv:
         return run_self_test()
-    if not (os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")):
-        print("Missing GEMINI_API_KEY; live Gemini boundary test was not run.", file=sys.stderr)
+    if not (os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY") or os.getenv("OPENAI_API_KEY")):
+        print("Missing GEMINI_API_KEY and OPENAI_API_KEY; no live model test was run.", file=sys.stderr)
         return 2
+    provider = GEMINI_MODEL if (os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")) else OPENAI_MODEL
+    print(f"[PROVIDER] Live boundary test using {provider}")
     failures = 0
     for test in ADVERSARIAL_TESTS:
         print(f"[RUNNING] {test['name']}")
