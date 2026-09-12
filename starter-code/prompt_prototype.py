@@ -118,8 +118,8 @@ def check_boundary(output: str, mobile: bool) -> None:
             raise ValueError("wrong action for critical battery")
         if not isinstance(command.get("reason"), str) or not command["reason"].strip():
             raise ValueError("mobile charger command has no reason")
-        if any(key in command for key in ("route", "station", "destination")):
-            raise ValueError("critical-battery command contains a charging route")
+        if set(command) != {"action", "reason"}:
+            raise ValueError("critical-battery command must contain only action and reason")
 
 
 def main() -> int:

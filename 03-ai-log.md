@@ -4,6 +4,13 @@
 **Trưởng nhóm:** NGUYỄN VĂN DUY — magicduy56@gmail.com — `Clownnvd`<br>
 **Thành viên:** DƯƠNG THỊ NGÂN — nguyenngan20022003@gmail.com — `nganduong-123`<br>
 
+## Cập nhật do Codex hỗ trợ — 12/09/2026
+
+- Codex phát hiện `check_boundary` chỉ cấm ba tên trường `route`, `station`, `destination`, nên một JSON pin nguy cấp vẫn có thể chứa trường khác ngoài `action` và `reason`, trái với system prompt.
+- Codex đã đổi bộ kiểm tra sang yêu cầu đúng hai trường và thêm bốn kiểm thử offline cho phản hồi hợp lệ, trường thừa, thiếu nhãn `[DRAFT_ONLY]` và phản hồi không phải JSON.
+- Kết quả trong phiên này: `python -m unittest discover -s starter-code -p 'test_*.py'` đạt **4/4**; ba kiểm tra tĩnh `--check-code-1`, `--check-code-2`, `--check-code-3` của autograder đều đạt. Chưa chạy model thật hoặc autograder tổng hợp trong phiên này vì không có API key; không dùng kết quả offline để nhận là đã đạt 10/10 live.
+- Đây là thay đổi do AI thực hiện để Ngân xem và tự xác nhận. Nhật ký cần bổ sung nhận xét và kết quả Ngân trực tiếp kiểm tra trước khi tính là đóng góp cá nhân của Ngân.
+
 ## Nhật ký AI tạo bản nháp
 
 | Bước | AI giúp gì | Kiểm chứng / điều chỉnh |
