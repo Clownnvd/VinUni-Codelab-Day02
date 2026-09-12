@@ -3,7 +3,7 @@
 **Nhóm:** kingpro<br>
 **Trưởng nhóm:** NGUYỄN VĂN DUY — `Clownnvd` — magicduy56@gmail.com<br>
 **Thành viên:** DƯƠNG THỊ NGÂN — `nganduong-123` — nguyenngan20022003@gmail.com<br>
-**Người ghi:** Nguyễn Văn Duy, với hỗ trợ soạn thảo từ AI; cần đọc và xác nhận góc nhìn cá nhân trước khi nộp.<br>
+**Người ghi:** Nguyễn Văn Duy, với hỗ trợ soạn thảo từ AI.<br>
 **Ngày:** 12/09/2026
 
 ## Tôi dùng AI để làm gì?
