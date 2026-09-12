@@ -30,7 +30,7 @@
 | Bài toán một câu | Chuyển yêu cầu hội họp nhiều điều kiện thành bản tóm tắt có cấu trúc và nháp câu hỏi/báo giá để nhân viên kinh doanh duyệt. |
 | Actor | Nhân viên kinh doanh MICE/đặt đoàn và khách doanh nghiệp chờ phản hồi. |
 | Workflow hiện tại — **giả thuyết** | 1. Nhận form/email → 2. Đọc và tách ngày, số khách, địa điểm, phòng, thiết bị → 3. Hỏi thông tin còn thiếu → 4. Kiểm tra khả dụng và giá trong hệ thống → 5. Soạn phản hồi, xin duyệt và gửi. |
-| Bottleneck cần đo | Bước 2–3, 5: hiểu yêu cầu tự do và soạn phản hồi; **chưa có số phút/lượt thực đo**. |
+| Bottleneck cần đo | Bước 2–3, 5: hiểu yêu cầu tự do và soạn phản hồi; **10 phút/lượt minh họa** trong workflow giả định 19 phút, **chưa có số thực đo**. |
 | AI hỗ trợ | Trích xuất trường, đánh dấu trường còn thiếu, soạn **nháp** câu hỏi hoặc phản hồi từ dữ liệu đã được nhân viên cung cấp. |
 | Metric pilot có số | Trích đúng ≥95% các trường bắt buộc trên tập kiểm thử đã gán nhãn; giảm ≥40% thời gian chuẩn bị nháp so với baseline đo cùng nhóm; 0 báo giá/giữ phòng được gửi tự động. |
 | Quick architecture | **LLM Feature + rule kiểm tra trường + người duyệt**. Không dùng Agent tự đặt phòng. |
@@ -42,7 +42,7 @@
 | Bài toán một câu | Đề xuất loại và tuyến xử lý cho phản ánh cư dân viết tự do trên kênh tiếp nhận. |
 | Actor | Cư dân, nhân viên chăm sóc cư dân và ban quản lý tòa nhà. |
 | Workflow hiện tại — **giả thuyết** | 1. Cư dân gửi phản ánh → 2. Nhân viên đọc → 3. Chọn loại/mức ưu tiên → 4. Chuyển bộ phận → 5. Bộ phận xác nhận hoặc chuyển lại. |
-| Bottleneck cần đo | Bước 2–4, đặc biệt các phản ánh có nhiều vấn đề; **chưa có số phút/lượt thực đo**. |
+| Bottleneck cần đo | Bước 2–4, đặc biệt phản ánh có nhiều vấn đề; **4 phút/lượt giả định để lập pilot**, cần đo thực tế. |
 | AI hỗ trợ | Gợi ý nhãn, tóm tắt vấn đề và tuyến tiếp nhận; rule bắt từ khóa khẩn cấp để chuyển người trực. |
 | Metric pilot có số | Macro-F1 ≥0,90 trên bộ nhãn được thống nhất; ≥95% phiếu khẩn được chuyển người trực; giảm ≥30% thời gian phân loại so với baseline. |
 | Quick architecture | **Rule cho khẩn cấp + LLM Feature cho văn bản mơ hồ**; nhân viên xác nhận trước khi giao việc. |
@@ -54,7 +54,7 @@
 | Bài toán một câu | Tóm tắt mô tả sự cố xe của khách thành phiếu tiếp nhận có cấu trúc để cố vấn dịch vụ kiểm tra. |
 | Actor | Chủ xe, nhân viên tiếp nhận và kỹ thuật viên xưởng. |
 | Workflow hiện tại — **giả thuyết** | 1. Khách nhập mô tả → 2. Nhân viên hỏi bổ sung → 3. Ghi triệu chứng/điều kiện phát sinh → 4. Chuyển cố vấn dịch vụ → 5. Kỹ thuật viên xác minh. |
-| Bottleneck cần đo | Bước 2–3 khi mô tả thiếu/không chuẩn; **chưa có số phút/lượt thực đo**. |
+| Bottleneck cần đo | Bước 2–3 khi mô tả thiếu/không chuẩn; **5 phút/lượt giả định để lập pilot**, cần đo thực tế. |
 | AI hỗ trợ | Gợi ý câu hỏi làm rõ và nháp phiếu triệu chứng; không suy đoán mã lỗi hay hướng dẫn tiếp tục lái xe. |
 | Metric pilot có số | ≥95% phiếu nháp có đủ trường triệu chứng, bối cảnh và mức khẩn; 0 khuyến nghị an toàn xe được gửi không qua cố vấn; giảm ≥25% lượt hỏi lại. |
 | Quick architecture | **LLM Feature ở khâu tóm tắt**, rule cho cảnh báo nguy hiểm, cố vấn duyệt. |

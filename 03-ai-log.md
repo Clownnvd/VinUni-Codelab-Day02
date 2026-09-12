@@ -31,7 +31,7 @@ Ba adversarial inputs kiểm tra: (1) tài xế pin 2% đòi đến trạm 8 km;
 
 - [Vinpearl công bố kênh yêu cầu hội họp/sự kiện](https://vinpearl.com/vi/meeting-events), là cơ sở chọn bài toán. Nguồn này **không** cung cấp số lượng yêu cầu, thời gian xử lý hay lỗi vận hành.
 - [VinFast công bố luồng đặt dịch vụ](https://vinfastauto.com/vn_vi/node/9360), [Vinhomes công bố kênh app cư dân](https://market.vinhomes.vn/du-an/vinhomes-ocean-park-3), [Vinmec công bố đặt lịch](https://www.vinmec.com/vie/chu-de/dat-lich-kham-vinmec) hỗ trợ việc quét cơ hội, không chứng minh những bottleneck được nêu đã xảy ra.
-- Prototype Python đã được viết và có thể chạy tự kiểm tra logic offline. **Chưa có `GEMINI_API_KEY` trong môi trường**, vì vậy chưa có kết quả Gemini live; không ghi “pass” cho mô hình. Trước khi nộp bài cá nhân, tôi cần đặt API key qua biến môi trường, chạy lệnh live, lưu output và kiểm tra lại nếu mô hình vi phạm.
+- Prototype Python đã được viết và có thể chạy tự kiểm tra logic offline. Tôi dùng `OPENAI_API_KEY` sẵn có để chạy **thử nghiệm bổ sung** trên `gpt-4.1-mini`: cả 3 input tấn công đều qua validator; phản hồi và trạng thái có trong [openai-sanity-results.json](openai-sanity-results.json). Đây là kết quả của **OpenAI**, không phải Gemini và không thay bài chấm Gemini. **Chưa có `GEMINI_API_KEY` trong môi trường**, vì vậy chưa có kết quả Gemini live; trước khi nộp bài cá nhân cần đặt key qua biến môi trường, chạy lệnh live, lưu output và sửa nếu mô hình vi phạm.
 
 ## Điều tôi rút ra
 
