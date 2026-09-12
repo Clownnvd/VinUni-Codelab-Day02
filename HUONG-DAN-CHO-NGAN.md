@@ -6,15 +6,15 @@
 **Repo chung:** https://github.com/Clownnvd/VinUni-Codelab-Day02<br>
 **Branch cá nhân đã tạo sẵn:** `nganduong-123`
 
-Ngân cần **tự làm, tự kiểm tra, tự commit và push** trên branch `nganduong-123`. Branch rỗng hoặc commit do người khác tạo không chứng minh phần đóng góp của Ngân. Trưởng nhóm sẽ xem bài sau khi Ngân push và chỉ đưa **báo cáo đã chọn** lên `main`; file Python vẫn ở branch cá nhân.
+Hai người có thể dùng **cùng máy tính**. Thư mục `C:\nextjs_project\VinUni-Codelab-Day02-Ngan` và branch `nganduong-123` đã có **bản nháp do AI chuẩn bị, commit bởi `Clownnvd`**. Ngân cần trực tiếp đọc, sửa, kiểm tra rồi **tự commit và push thêm phần của mình**. Bản nháp của người khác không chứng minh đóng góp của Ngân. Trưởng nhóm sẽ xem bài sau khi Ngân push và chỉ đưa **báo cáo đã chọn** lên `main`; file Python vẫn ở branch cá nhân.
 
-## Đoạn hướng dẫn để dán vào ChatGPT trên máy Ngân
+## Đoạn hướng dẫn để dán vào ChatGPT trên máy chung
 
-> Tôi là **Dương Thị Ngân**, GitHub `nganduong-123`, email đăng ký `nguyenngan20022003@gmail.com`, thành viên nhóm **kingpro**. Trưởng nhóm là **Nguyễn Văn Duy**, GitHub `Clownnvd`, email `magicduy56@gmail.com`. Hãy làm bài Lab 02 trong repo riêng của nhóm: `https://github.com/Clownnvd/VinUni-Codelab-Day02`.
+> Đây là phần bài cá nhân của **Dương Thị Ngân**, GitHub `nganduong-123`, email đăng ký `nguyenngan20022003@gmail.com`, thành viên nhóm **kingpro**. Trưởng nhóm là **Nguyễn Văn Duy**, GitHub `Clownnvd`, email `magicduy56@gmail.com`. Hai người dùng chung một máy; hãy làm trong thư mục clone riêng `C:\nextjs_project\VinUni-Codelab-Day02-Ngan`. Repo nhóm: `https://github.com/Clownnvd/VinUni-Codelab-Day02`. Ngân sẽ trực tiếp xem, chỉnh và xác nhận phần việc của mình trước khi commit.
 >
-> **Trước khi sửa file:** kiểm tra GitHub trên máy đang đăng nhập đúng tài khoản `nganduong-123`; tôi phải chấp nhận lời mời collaborator từ repo. Clone repo, fetch và chuyển sang branch `nganduong-123` đã có trên remote. Đọc toàn bộ `README.md`, `01-worksheet.md`, `02-deliverable-example.md`, `03-inspiration-kit.md`, `starter-code/prompt_prototype.py` và `autograder/autograder.py`. Tuân theo chúng và phân biệt ví dụ Xanh SM với bài toán nhóm tự chọn.
+> **Trước khi sửa file:** Ngân chấp nhận lời mời collaborator và tự đăng nhập GitHub `nganduong-123` trên máy chung. Kiểm tra tài khoản thực sự được dùng để push, mở thư mục `C:\nextjs_project\VinUni-Codelab-Day02-Ngan`, fetch/pull branch `nganduong-123`. Đọc toàn bộ `README.md`, `01-worksheet.md`, `02-deliverable-example.md`, `03-inspiration-kit.md`, `starter-code/prompt_prototype.py` và `autograder/autograder.py`. Branch hiện có bản nháp AI để Ngân đánh giá, chưa phải bài đã được Ngân xác nhận.
 >
-> **Phần cá nhân của tôi:** tạo `01-problem-scan.md` với ít nhất 5 bài toán qua nhiều lenses và 3 Quick Problem Cards có actor, quy trình, bottleneck, metric có số; viết `02-deep-dive-report.md` về hướng nhóm chọn là **Vinpearl: trợ lý đọc yêu cầu hội họp và soạn nháp phản hồi**; tạo `04-workflow-diagram.png` thể hiện current-state, handoff, bottleneck, thời gian; viết `03-ai-log.md` phản ánh **đúng những gì tôi thực sự làm cùng AI**, gồm chỗ AI sai và cách kiểm chứng. Hãy làm phần phân tích bằng góc nhìn của tôi, có nguồn và đánh dấu số liệu nào chỉ là giả định; không chép nguyên bài của Nguyễn Văn Duy ở branch `Clownnvd`.
+> **Phần cá nhân của tôi:** rà từng file nháp đã có. `01-problem-scan.md` cần ≥5 bài toán và 3 Quick Problem Cards; tôi sẽ sửa ít nhất một thẻ bằng lập luận của mình. `02-deep-dive-report.md` phân tích hướng nhóm chọn **Vinpearl: trợ lý đọc yêu cầu hội họp và soạn nháp phản hồi**; tôi sẽ kiểm tra 6 fields, workflow, metric và quyết định. `04-workflow-diagram.png` phải khớp báo cáo; nếu sửa quy trình thì tạo lại ảnh. `03-ai-log.md` phải phản ánh **đúng các bước tôi trực tiếp làm cùng AI**, gồm chỗ AI sai và cách kiểm chứng; thay mọi câu chưa đúng với trải nghiệm của tôi. Không chép nguyên bài của Nguyễn Văn Duy ở branch `Clownnvd`.
 >
 > **Code cá nhân:** hoàn thiện `starter-code/prompt_prototype.py` với system prompt, hàm gọi model và ít nhất 3 adversarial tests cho tình huống Xanh SM pin yếu do đề cho. Thầy đã xác nhận dùng ChatGPT/OpenAI được. Nếu dùng `OPENAI_API_KEY`, chỉ đọc key từ biến môi trường, không ghi key vào code, file `.md`, Git, ảnh chụp hay đoạn chat. Để qua autograder hiện tại, giữ phần gọi Gemini SDK hợp lệ và có thể thêm OpenAI fallback; in rõ provider nào thực sự được dùng. Kiểm tra `[DRAFT_ONLY]` và JSON `dispatch_mobile_charger` khi pin dưới 5%. Không ghi là đã chạy Gemini nếu chỉ chạy OpenAI.
 >
@@ -24,13 +24,13 @@ Ngân cần **tự làm, tự kiểm tra, tự commit và push** trên branch `n
 
 ## Các lệnh Ngân có thể dùng trên Windows PowerShell
 
-Chấp nhận lời mời từ GitHub trước khi clone repo private. Kiểm tra tài khoản GitHub đang đăng nhập bằng `gh auth status` nếu có GitHub CLI, hoặc đăng nhập GitHub trong VS Code.
+Ngân chấp nhận lời mời từ GitHub trước khi push repo private. Kiểm tra tài khoản đang đăng nhập bằng `gh auth status` nếu có GitHub CLI; nếu còn là `Clownnvd`, Ngân tự đăng nhập/chuyển sang `nganduong-123` trước khi push. Dùng thư mục riêng đã tạo sẵn:
 
 ```powershell
-git clone https://github.com/Clownnvd/VinUni-Codelab-Day02.git
-cd VinUni-Codelab-Day02
+cd C:\nextjs_project\VinUni-Codelab-Day02-Ngan
 git fetch origin
-git switch --track origin/nganduong-123
+git switch nganduong-123
+git pull --ff-only origin nganduong-123
 git config user.name "DƯƠNG THỊ NGÂN"
 git config user.email "nguyenngan20022003@gmail.com"
 git status -sb
@@ -48,6 +48,6 @@ git push -u origin nganduong-123
 git rev-parse --short HEAD
 ```
 
-Nếu `git switch --track` báo branch đã tồn tại trên máy, dùng `git switch nganduong-123` rồi `git pull --ff-only origin nganduong-123`. Nếu GitHub chưa nhận diện email commit, Ngân cần xác nhận email này trong tài khoản GitHub trước khi push để commit được gắn đúng người.
+Nếu GitHub chưa nhận diện email commit, Ngân cần xác nhận email này trong tài khoản GitHub trước khi push để commit được gắn đúng người. Lệnh `git config user.name/email` chỉ đặt danh tính commit; cần kiểm tra tài khoản xác thực thực sự khi push bằng `gh auth status` hoặc VS Code.
 
 **Gửi cho trưởng nhóm sau khi push:** link `https://github.com/Clownnvd/VinUni-Codelab-Day02/tree/nganduong-123`, mã commit từ lệnh cuối, ảnh hoặc text kết quả autograder (không kèm API key), và tóm tắt phần Ngân tự làm. Chỉ Nguyễn Văn Duy review/chọn file nhóm, merge `.md`/`.png` vào `main` và điền form chính thức.
