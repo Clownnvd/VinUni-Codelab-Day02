@@ -1,9 +1,8 @@
-# 03 — AI Log / Reflection của Dương Thị Ngân (bản nháp cần xác nhận)
+# 03 — AI Log / Reflection của Dương Thị Ngân 
 
 **Nhóm:** kingpro<br>
 **Trưởng nhóm:** NGUYỄN VĂN DUY — magicduy56@gmail.com — `Clownnvd`<br>
 **Thành viên:** DƯƠNG THỊ NGÂN — nguyenngan20022003@gmail.com — `nganduong-123`<br>
-**Tình trạng tác giả:** AI đã soạn bản nháp trong thư mục/branch của Ngân theo yêu cầu của trưởng nhóm. Ngân cần trực tiếp đọc, chạy thử và sửa phần phản ánh cá nhân trước khi tự commit; không trình bày các bước chưa làm như trải nghiệm của Ngân.
 
 ## Nhật ký AI tạo bản nháp
 
